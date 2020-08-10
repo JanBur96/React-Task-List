@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-size: 2rem;
+  color: var(--font);
+  --background: #1d1e22;
+  --yellow: #feda6a;
+  --tasks: #27282e;
+  --task: #feda6a;
+  --alt-color-1: #393F4D;
+  --border: #0fa9ea;
+  --input: #fff;
+  --box-shadow: rgba(255, 255, 255, .2);
+  --font: #000;
+}
+
+body.light {
+  --background: #e1e1e1;
+  --tasks: #fff;
+  --task: #6494c7;
+  --alt-color-1: #1e7382;
+  --border: #feda6a;
+  --input: #fff;
+  --font: #feda6a;
+  --remove: #fff;
+}
+
+.container {
+  width: 55rem;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px var(--box-shadow)
+}
+
+.header {
+  width: 100%;
+  height: 15rem;
+  padding: 1.25rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  color: #fff;
+  background-color: rgba(57, 63, 77, .4);
+  border-bottom: 1px solid var(--border);
+  border-radius: 10px 10px 0 0;
+}
+
+.pseudo::before {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  border-radius: 10px;
+  background: url(./tenor.gif) no-repeat center center/cover;
+  z-index: -10;
+}
+
+.sunrise {
+  background: url(./sunrise.png) no-repeat center center/cover;
+}
+
+.header__mode {
+  color: var(--yellow);
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.header__time {
+  text-align: center;
+  justify-self: center;
+  font-size: 4rem;
+  letter-spacing: 2px;
+}
+
+.header__clear {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.header__clear-button {
+  display: inline;
+  text-align: right;
+  cursor: pointer;
+}
+
+.tasks {
+  width: 100%;
+  height: 60rem;
+  background-color: var(--tasks);
+  overflow-x: hidden;
+}
+
+.task {
+  padding: 1rem 0 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--task);
+  border-bottom: 1px solid black;
+  /* cursor: grab; */
+}
+
+.task__button {
+  padding: 0 1rem;
+  background-color: unset;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all .35s;
+  outline: none;
+  color: var(--remove)
+}
+
+.task__button:hover {
+  transform: scale(1.1);
+}
+
+.grabbing {
+  cursor: grabbing;
+}
+
+.add-task {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  border-top: 2px solid var(--border);
+  border-radius: 0 0 10px 10px;
+  background-color: #131921;
+}
+
+.add-task__input {
+  height: 100%;
+  flex-grow: 1;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 0 0 0 8px;
+  color: var(--input);
+  background-color: var(--alt-color-1);
+  font-size: 2rem;
+  outline: none;
+}
+
+.add-task__input:focus {
+  box-shadow: 0 0 2px 2px var(--yellow);
+}
+
+.add-task__button {
+  width: 5rem;
+  border: none;
+  border-left: 1px solid var(--border);
+  border-radius: 0 0 8px 0;
+  background-color: var(--yellow);
+  font-size: 2rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.add-task__button:focus {
+  box-shadow: 0 0 2px 2px var(--background);
+}
+
+@media (max-width: 600px) {
+  #root {
+    height: 100%;
+    width: 100%;
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: background 750ms !important;
+  transition-delay: 0 !important;
+}
+
+.task-list-enter {
+  opacity: 0;
+}
+.task-list-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.task-list-exit {
+  opacity: 1;
+}
+.task-list-exit-active {
+  opacity: 0;
+  transform: translateX(500px);
+  transition: all 350ms;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
