@@ -189,7 +189,7 @@ body.light {
   box-shadow: 0 0 2px 2px var(--yellow);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 812px) {
   #root {
     width: 100%;
     height: 100%;
@@ -199,12 +199,6 @@ body.light {
     width: 100%;
     height: 100%;
     padding: 0;
-  }
-}
-
-@media (max-height: 812px) {
-  .container {
-    height: 100%;
   }
 }
 
