@@ -25,7 +25,7 @@ This is a Task-List I've created for getting better with React.
 
 ## What is planned?
 
-* Multiple categories/projects
-* Different priorities to choose
-* Drag and Drop
-* Implement a database
+- [ ] Multiple categories/projects
+- [ ] Different priorities to choose
+- [ ] Drag and Drop
+- [ ] Implement a database
