@@ -13,7 +13,6 @@ export default class Mode extends React.Component {
     window.setTimeout(() => {
       document.documentElement.classList.remove('transition')
     }, 1000)
-    console.log("hello")
   }
 
 
