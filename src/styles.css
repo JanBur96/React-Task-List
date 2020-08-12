@@ -203,7 +203,7 @@ body.light {
 
 @media (max-height: 812px) {
   .container {
-    height: 100vh;
+    height: 100%;
   }
 }
 
