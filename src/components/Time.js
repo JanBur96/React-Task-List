@@ -15,9 +15,7 @@ export default class Time extends React.Component {
   }
 
   getTime() {
-    this.setState({
-      date: new Date()
-    });
+    this.setState({date: new Date()});
   }
 
   render() {

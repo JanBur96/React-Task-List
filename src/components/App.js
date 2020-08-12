@@ -24,7 +24,7 @@ export default class App extends React.Component {
   componentDidUpdate (prevProps, prevState) {
     if (prevState.tasks.length !== this.state.tasks.length) {
       const json = JSON.stringify(this.state.tasks);
-      localStorage.setItem('tasks', json)
+      localStorage.setItem('tasks', json);
     }
   }
 
@@ -33,18 +33,24 @@ export default class App extends React.Component {
   }
 
   handleRemoveTask = (taskToRemove) => {
-    this.setState((prevState) => ({tasks: prevState.tasks.filter((task) => taskToRemove !== task)}))
+    this.setState((prevState) => ({tasks: prevState.tasks.filter((task) => taskToRemove !== task)}));
   }
 
   handleRemoveAllTasks = () => {
-    this.setState(() => ({tasks: []}))
+    this.setState(() => ({tasks: []}));
   }
 
   render() {
     return (
       <div className="container">
-        <Header handleRemoveAllTasks={this.handleRemoveAllTasks}/>
-        <Tasks tasks={this.state.tasks} handleRemoveTask={this.handleRemoveTask}/>
+        <Header 
+        handleRemoveAllTasks={this.handleRemoveAllTasks} 
+        tasks={this.state.tasks}
+        />
+        <Tasks 
+        tasks={this.state.tasks} 
+        handleRemoveTask={this.handleRemoveTask}
+        />
         <AddTask handleAddTask={this.handleAddTask} />
       </div>
     )

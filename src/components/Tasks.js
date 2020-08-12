@@ -8,10 +8,18 @@ const Tasks = (props) => (
     <TransitionGroup>
       {
         props.tasks.map((task, index) => (
-          <CSSTransition key={task} timeout={300} classNames="task-list">
-            <Task key={task} taskText={task} handleRemoveTask={props.handleRemoveTask}/>
+          <CSSTransition 
+          key={task} 
+          timeout={300} 
+          classNames="task-list"
+          >
+            <Task 
+            key={task} 
+            taskText={task} 
+            handleRemoveTask={props.handleRemoveTask}
+            />
           </CSSTransition>
-      ))
+       ))
       }
     </TransitionGroup>
   </ul>

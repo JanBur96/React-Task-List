@@ -8,7 +8,10 @@ const Header = (props) => (
   <div className="header pseudo">
     <Mode />
     <Time />
-    <Clear handleRemoveAllTasks={props.handleRemoveAllTasks}/>
+    <Clear 
+    handleRemoveAllTasks={props.handleRemoveAllTasks} 
+    tasks={props.tasks}
+    />
   </div>
 )
 

@@ -23,40 +23,42 @@ body {
   font-size: 2rem;
   color: var(--font);
   --background: #1d1e22;
-  --yellow: #feda6a;
+  --font: #000;
   --tasks: #27282e;
   --task: #feda6a;
+  --input: #fff;
   --alt-color-1: #393F4D;
   --border: #0fa9ea;
-  --input: #fff;
   --box-shadow: rgba(255, 255, 255, .2);
-  --font: #000;
+  --yellow: #feda6a;
 }
 
 body.light {
   --background: #e1e1e1;
+  --font: #feda6a;
   --tasks: #fff;
   --task: #6494c7;
+  --remove: #fff;
+  --input: #fff;
   --alt-color-1: #1e7382;
   --border: #feda6a;
-  --input: #fff;
-  --font: #feda6a;
-  --remove: #fff;
 }
 
 .container {
   width: 55rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--border);
   border-radius: 10px;
   box-shadow: 0 0 5px 2px var(--box-shadow)
 }
 
 .header {
+  position: relative;
   width: 100%;
   height: 15rem;
   padding: 1.25rem;
-  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -67,14 +69,14 @@ body.light {
 }
 
 .pseudo::before {
-  height: 100%;
-  width: 100%;
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  content: "";
   border-radius: 10px;
-  background: url(./tenor.gif) no-repeat center center/cover;
+  background: url(./stars.gif) no-repeat center center/cover;
+  content: "";
   z-index: -10;
 }
 
@@ -89,8 +91,8 @@ body.light {
 }
 
 .header__time {
-  text-align: center;
   justify-self: center;
+  text-align: center;
   font-size: 4rem;
   letter-spacing: 2px;
 }
@@ -110,6 +112,7 @@ body.light {
 .tasks {
   width: 100%;
   height: 60rem;
+  flex-grow: 1;
   background-color: var(--tasks);
   overflow-x: hidden;
 }
@@ -121,41 +124,40 @@ body.light {
   align-items: center;
   background-color: var(--task);
   border-bottom: 1px solid black;
-  /* cursor: grab; */
 }
 
 .task__button {
   padding: 0 1rem;
+  color: var(--remove);
   background-color: unset;
-  font-size: 2rem;
   border: none;
-  cursor: pointer;
+  font-size: 2rem;
   transition: all .35s;
   outline: none;
-  color: var(--remove)
+  cursor: pointer;
 }
 
 .task__button:hover {
   transform: scale(1.1);
 }
 
-.grabbing {
-  cursor: grabbing;
-}
-
-.add-task {
+.add-task__form {
   width: 100%;
   height: 5rem;
   display: flex;
+  background-color: #131921;
   border-top: 2px solid var(--border);
   border-radius: 0 0 10px 10px;
-  background-color: #131921;
+}
+
+.add-task__label {
+  display: none;
 }
 
 .add-task__input {
   height: 100%;
-  flex-grow: 1;
   padding: 0 1rem;
+  flex-grow: 1;
   border: none;
   border-radius: 0 0 0 8px;
   color: var(--input);
@@ -168,10 +170,13 @@ body.light {
   box-shadow: 0 0 2px 2px var(--yellow);
 }
 
+.add-task__input::placeholder {
+  color: rgba(255, 255, 255, .8);
+}
+
 .add-task__button {
   width: 5rem;
   border: none;
-  border-left: 1px solid var(--border);
   border-radius: 0 0 8px 0;
   background-color: var(--yellow);
   font-size: 2rem;
@@ -180,19 +185,25 @@ body.light {
 }
 
 .add-task__button:focus {
-  box-shadow: 0 0 2px 2px var(--background);
+  box-shadow: 0 0 2px 2px var(--yellow);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   #root {
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
 
   .container {
-    height: 100%;
     width: 100%;
+    height: 100%;
     padding: 0;
+  }
+}
+
+@media (max-height: 812px) {
+  .container {
+    height: 100vh;
   }
 }
 
