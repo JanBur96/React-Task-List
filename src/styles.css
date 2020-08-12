@@ -28,7 +28,7 @@ body {
   --task: #feda6a;
   --input: #fff;
   --alt-color-1: #393F4D;
-  --border: #0fa9ea;
+  --border: #64678e;
   --box-shadow: rgba(255, 255, 255, .2);
   --yellow: #feda6a;
 }
@@ -37,11 +37,12 @@ body.light {
   --background: #e1e1e1;
   --font: #feda6a;
   --tasks: #fff;
-  --task: #6494c7;
+  --task: #5180aa;
   --remove: #fff;
   --input: #fff;
   --alt-color-1: #1e7382;
   --border: #feda6a;
+  --box-shadow: rgba(0, 0, 0, .2)
 }
 
 .container {
