@@ -4,8 +4,6 @@
 
 This is a Task-List I've created for getting better with React.
 
-[Test it on my website](https://task-list.jan-web.dev)
-
 ### Notable Features
 
 * Saving Tasks in Local Storage
