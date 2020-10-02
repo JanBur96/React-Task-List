@@ -22,10 +22,3 @@ This is a Task-List I've created for getting better with React.
 ### Third-Party
 
 * React Transition Group
-
-## What is planned?
-
-- [ ] Multiple categories/projects
-- [ ] Different priorities to choose
-- [ ] Drag and Drop
-- [ ] Implement a database
